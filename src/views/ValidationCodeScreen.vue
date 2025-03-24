@@ -3,7 +3,7 @@ import NavBar from '@/components/NavBar.vue';
 </script>
 
 <template>
-  <NavBar flat type-icon="mdi-arrow-left-circle" type-color="warning" type-title="Voltar"/>
+  <NavBar flat type-icon="mdi-arrow-left-circle" type-color="warning" type-title="Voltar" route="/password"/>
   <v-container fluid class="fill-height">
     <v-row>
         <v-col cols="12">
@@ -29,6 +29,7 @@ import NavBar from '@/components/NavBar.vue';
                     flat
                     width="70%"
                     class="font-weight-bold"
+                    to="/"
                 />
                 <div class="text-caption mt-3">
                     Não recebeu o código? <a href="#" class="text-decoration-none text-warning font-weight-bold">Enviar código</a>

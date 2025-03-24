@@ -47,7 +47,7 @@ const viewPassword = ref(false)
                                 <div class="d-md-flex justify-md-space-between align-md-center mt-4">
                                     <!-- Link de cadastro para laptops, televisões, entre outros -->
                                     <a v-if="$vuetify.display.mdAndUp" href="#" target="_blank" rel="noopener noreferrer" class="text-subtitle-1 text-warning">Cadastre-se agora</a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer" class="d-flex d-md-inline justify-end w-xl-100 text-subtitle-1 text-grey-darken-3">Esqueceu a senha?</a>
+                                    <a href="/password" rel="noopener noreferrer" class="d-flex d-md-inline justify-end w-xl-100 text-subtitle-1 text-grey-darken-3">Esqueceu a senha?</a>
                                 </div>
                             </div>
                         </v-col>
