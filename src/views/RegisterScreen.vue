@@ -31,7 +31,7 @@ const confirmPassword = ref(false)
                     </div>
                 </template>
             </v-checkbox>
-            <v-btn text="Cadastrar" class="bg-warning w-100 font-weight-bold" height="40" max-width="500"></v-btn>
+            <v-btn text="Cadastrar" class="bg-warning w-100 font-weight-bold" height="40" max-width="500" to="/"></v-btn>
         </v-card>
     </v-container>
 </template>

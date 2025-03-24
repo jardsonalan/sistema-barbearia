@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/password/validation-code',
       name: 'validation-code',
       component: () => import('@/views/ValidationCodeScreen.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('@/views/RegisterScreen.vue')
     }
   ],
 })

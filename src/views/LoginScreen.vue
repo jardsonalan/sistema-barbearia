@@ -16,7 +16,7 @@ const viewPassword = ref(false)
             <!-- Link de cadastro para dispositivos mobile e tablet's -->
             <div class="pa-3 mt-2">
                 <span class="text-h4 font-weight-bold">Entre agora ou </span>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="d-block text-h5 text-warning mt-2">Cadastre-se agora</a>
+                <a href="/register" rel="noopener noreferrer" class="d-block text-h5 text-warning mt-2">Cadastre-se agora</a>
                 <hr class="mt-3 rounded-lg text-grey-lighten-5">
             </div>
         </v-col>
@@ -46,7 +46,7 @@ const viewPassword = ref(false)
                                 <v-btn class="w-100 bg-warning font-weight-bold" height="40px">Entrar</v-btn>
                                 <div class="d-md-flex justify-md-space-between align-md-center mt-4">
                                     <!-- Link de cadastro para laptops, televisões, entre outros -->
-                                    <a v-if="$vuetify.display.mdAndUp" href="#" target="_blank" rel="noopener noreferrer" class="text-subtitle-1 text-warning">Cadastre-se agora</a>
+                                    <a v-if="$vuetify.display.mdAndUp" href="/register" rel="noopener noreferrer" class="text-subtitle-1 text-warning">Cadastre-se agora</a>
                                     <a href="/password" rel="noopener noreferrer" class="d-flex d-md-inline justify-end w-xl-100 text-subtitle-1 text-grey-darken-3">Esqueceu a senha?</a>
                                 </div>
                             </div>
