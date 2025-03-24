@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import LoginScreen from './views/LoginScreen.vue';
+// import LoginScreen from './views/LoginScreen.vue';
+// import PasswordScreen from './views/PasswordScreen.vue';
+import ValidationCodeScreen from './views/ValidationCodeScreen.vue';
 </script>
 
 <template>
@@ -7,7 +9,9 @@ import LoginScreen from './views/LoginScreen.vue';
     <!-- Barra de navegação -->
     
     <v-main>
-      <LoginScreen />
+      <ValidationCodeScreen />
+      <!-- <PasswordScreen /> -->
+      <!-- <LoginScreen /> -->
     </v-main>
 
     <v-footer class="d-flex justify-center ga-2 bg-warning" style="max-height: 80px;">
