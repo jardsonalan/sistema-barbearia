@@ -39,8 +39,8 @@ const viewPassword = ref(false)
                                 label="Senha"
                                 :type="viewPassword?'text':'password'"
                                 variant="outlined"
-                                :append-icon="viewPassword?'mdi-eye':'mdi-eye-off'"
-                                @click:append="viewPassword = !viewPassword"
+                                :append-inner-icon="viewPassword?'mdi-eye':'mdi-eye-off'"
+                                @click:append-inner="viewPassword = !viewPassword"
                             />
                             <div>
                                 <v-btn class="w-100 bg-warning font-weight-bold" height="40px">Entrar</v-btn>
