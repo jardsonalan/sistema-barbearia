@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useLoginUser } from '@/backend/backend';
+
+const login = ref('')
+const password = ref('')
+
+// Chamada do Hook de login que está dentro do backend
+const { getUser } = useLoginUser()
+
+// Função que recebe os dados fornecidos pelo usuário e manda para a função que está dentro do Hook de login
+const loginAccess = () => {
+    getUser(login.value, password.value)
+}
 
 const viewPassword = ref(false)
 </script>
@@ -34,6 +46,7 @@ const viewPassword = ref(false)
                             <v-text-field
                                 label="E-mail ou nome de usuário"
                                 variant="outlined"
+                                v-model="login"
                             />
                             <v-text-field
                                 label="Senha"
@@ -41,9 +54,10 @@ const viewPassword = ref(false)
                                 variant="outlined"
                                 :append-inner-icon="viewPassword?'mdi-eye':'mdi-eye-off'"
                                 @click:append-inner="viewPassword = !viewPassword"
+                                v-model="password"
                             />
                             <div>
-                                <v-btn class="w-100 bg-warning font-weight-bold" height="40px" to="/dashboard">Entrar</v-btn>
+                                <v-btn class="w-100 bg-warning font-weight-bold" height="40px" @click="loginAccess">Entrar</v-btn>
                                 <div class="d-md-flex justify-md-space-between align-md-center mt-4">
                                     <!-- Link de cadastro para laptops, televisões, entre outros -->
                                     <a v-if="$vuetify.display.mdAndUp" href="/register" rel="noopener noreferrer" class="text-subtitle-1 text-warning">Cadastre-se agora</a>

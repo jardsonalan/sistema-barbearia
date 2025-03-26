@@ -69,3 +69,36 @@ export function useRegisterUser() {
     // Retorna a função de cadastro do usuário
     return { registerUser }
 }
+
+// Hook: serve para verificar as informações de login e trocar a rota de navegação após o login
+export function useLoginUser() {
+    const router = useRouter()
+
+    // Função para buscar nome de usuário (ou e-mail) e senha na lista, para fazer login
+    const getUser = (login: string, password: string) => {
+        listUser.value.forEach((res) => {
+            // Verifica se o login (nome de usuário ou e-mail) e a senha são iguais aos cadastrados na lista
+            if ((login === res.email || login === res.name) && (password === res.password)) {
+                console.log('OK')
+                // Se os dados forem iguais, redireciona o usuário para a tela do dashboard
+                return updateRouter()
+            } else {
+                console.log('Nome de usuário/e-mail ou senha não encontrados.')
+            }
+        })
+    }
+
+    // Função para atualizar a rota de navegação, caso o login seja feito com sucesso
+    const updateRouter = async () => {
+        try {
+            // Espera 5 segundos antes de trocar a rota
+            await new Promise(resolve => setTimeout(resolve, 500)) 
+            // Retorna a tela de dashboard da aplicação
+            router.push('/dashboard')
+        } catch (error) {
+            console.log('Erro: ', error)
+        }
+    }
+
+    return { getUser }
+}
