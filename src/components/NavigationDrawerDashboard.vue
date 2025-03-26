@@ -28,7 +28,7 @@ const drawerBarSmallScreen = ref(false)
         </v-list>
         <template v-slot:append>
           <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-logout" title="Logout" value="logout" class="text-red"></v-list-item>
+            <v-list-item prepend-icon="mdi-logout" title="Logout" value="logout" class="text-red" to="/"></v-list-item>
           </v-list>
         </template>
       </v-navigation-drawer>
@@ -50,7 +50,7 @@ const drawerBarSmallScreen = ref(false)
         </v-list>
         <template v-slot:append>
           <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-logout" title="Logout" value="logout" class="text-red"></v-list-item>
+            <v-list-item prepend-icon="mdi-logout" title="Logout" value="logout" class="text-red" to="/"></v-list-item>
           </v-list>
         </template>
       </v-navigation-drawer>

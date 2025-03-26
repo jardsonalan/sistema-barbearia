@@ -12,7 +12,7 @@ const listHours = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00'
 <template>
   <NavigationDrawerDashboard>
     <template #list-item>
-      <v-list-item prepend-icon="mdi-view-dashboard-outline" title="Dashboard" value="dashboard" color="warning"/>
+      <v-list-item prepend-icon="mdi-view-dashboard-outline" title="Dashboard" value="dashboard" color="warning" to="/dashboard"/>
       <v-list-item prepend-icon="mdi-account-box" title="Conta" value="conta" color="warning"/>
     </template>
     <template #main>

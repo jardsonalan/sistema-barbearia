@@ -43,7 +43,7 @@ const viewPassword = ref(false)
                                 @click:append-inner="viewPassword = !viewPassword"
                             />
                             <div>
-                                <v-btn class="w-100 bg-warning font-weight-bold" height="40px">Entrar</v-btn>
+                                <v-btn class="w-100 bg-warning font-weight-bold" height="40px" to="/dashboard">Entrar</v-btn>
                                 <div class="d-md-flex justify-md-space-between align-md-center mt-4">
                                     <!-- Link de cadastro para laptops, televisões, entre outros -->
                                     <a v-if="$vuetify.display.mdAndUp" href="/register" rel="noopener noreferrer" class="text-subtitle-1 text-warning">Cadastre-se agora</a>
