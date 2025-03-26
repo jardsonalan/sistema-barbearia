@@ -1,0 +1,71 @@
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+type User = {
+    name: string,
+    email: string,
+    password: string,
+    confirmPassword: string,
+    confirmTerms: boolean
+}
+
+// Lista que serve como banco de dados fictício para os usuários
+const listUser = ref<User[]>([])
+
+// Hook: serve para cadastrar usuários na lista e trocar a rota de navegação após o cadastro
+export function useRegisterUser() {
+    const router = useRouter()
+
+    // Função para cadastrar usuários na lista
+    const registerUser = (nameUser: string, email: string, password: string, confirmPassword: string, confirmTerms: boolean) => {
+        if (verifyConditions(nameUser, email, password, confirmPassword, confirmTerms)) {
+            listUser.value.push({
+                name: nameUser,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword,
+                confirmTerms: confirmTerms
+            })
+            // Retorna a chamada da função para trocar de rota, caso o cadastro seja feito com sucesso
+            return updateRouter()
+        }
+    }
+    
+    // Função para atualizar a rota de navegação, caso o cadastro seja feito com sucesso
+    const updateRouter = async () => {
+        try {
+            // Espera 5 segundos antes de trocar a rota
+            await new Promise(resolve => setTimeout(resolve, 500)) 
+            // Retorna a tela de login da aplicação
+            router.push('/')
+        } catch (error) {
+            console.log('Erro: ', error)
+        }
+    }
+
+    // Função para verificar as condições propostas pela aplicação
+    const verifyConditions = (name: string, email: string, password: string, confirmPassword: string, confirmTerms: boolean) => {
+        // Verifica se nenhum campo está vazio
+        if ((name && email && password && confirmPassword) !== '') {
+            // Verifica se a confirmação de senha é igual a senha informada acima
+            if (confirmPassword === password) {
+                // Verifica se o usuário concordou com os termos de segurança
+                if (confirmTerms) {
+                    // Retorna true, se as condições forem atentidas corretamente
+                    return true
+                } else {
+                    console.log('ERRO: É necessário concordar com os termos de segurança.')
+                }
+            } else {
+                console.log('ERRO: Informe a mesma senha que foi passada no campo acima.')
+            }
+        } else {
+            console.log('ERRO: Algum campo está vazio.')
+        }
+        // Retorna false, se alguma condição não for atendida corretamente
+        return false
+    }
+
+    // Retorna a função de cadastro do usuário
+    return { registerUser }
+}
