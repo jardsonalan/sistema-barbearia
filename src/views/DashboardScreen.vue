@@ -7,6 +7,7 @@ const viewMoney = ref(false)
 const isDialogOpen = ref(false)
 
 const listHours = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00']
+const listServices = ['Cabelo', 'Barba', 'Cabelo + Barba']
 </script>
 
 <template>
@@ -55,15 +56,15 @@ const listHours = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00'
 
                       <v-card-text>
                         <v-row>
-                          <v-col>
-                            <v-text-field label="Nome"/>
+                          <v-col cols="6">
+                            <v-text-field label="Nome" variant="outlined"/>
                           </v-col>
-                          <v-col>
-                            <v-text-field label="Telefone" placeholder="(84) 00000-0000"></v-text-field>
+                          <v-col cols="6">
+                            <v-text-field label="Telefone" placeholder="(00) 00000-0000" variant="outlined"/>
                           </v-col>
                         </v-row>
-
-                        <v-select label="Horário" :items="listHours"/>
+                        <v-select label="Horário" :items="listHours" variant="outlined"/>
+                        <v-select label="Serviço" :items="listServices" variant="outlined"/>
                       </v-card-text>
 
                       <v-card-actions>
@@ -79,14 +80,16 @@ const listHours = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00'
               <v-table>
                 <thead>
                   <tr>
-                    <th class="text-center">Nome</th>
-                    <th class="text-center">Telefone</th>
-                    <th class="text-center">Horário</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Horário</th>
+                    <th>Serviço</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
