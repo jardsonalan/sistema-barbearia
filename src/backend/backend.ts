@@ -46,7 +46,7 @@ export function useRegisterUser() {
     // Função para verificar as condições propostas pela aplicação
     const verifyConditions = (name: string, email: string, password: string, confirmPassword: string, confirmTerms: boolean) => {
         // Verifica se nenhum campo está vazio
-        if ((name && email && password && confirmPassword) !== '') {
+        if (name.trim() !== '' && email.trim() !== '' && password.trim() !== '' && confirmPassword.trim() !== '') {
             // Verifica se a confirmação de senha é igual a senha informada acima
             if (confirmPassword === password) {
                 // Verifica se o usuário concordou com os termos de segurança

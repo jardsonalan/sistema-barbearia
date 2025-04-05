@@ -30,7 +30,7 @@ const listServices = ['Cabelo', 'Barba', 'Cabelo + Barba']
 
 // Função para cadastrar os dados dos clientes na tabela
 function registerClient () {
-  if ((name.value && phone.value && hours.value && service.value) !== ''){
+  if (name.value.trim() !== '' && phone.value.trim() !== '' && hours.value.trim() !== '' && service.value.trim() !== '') {
     listClients.value.push({
       id: increment,
       name: name.value,
