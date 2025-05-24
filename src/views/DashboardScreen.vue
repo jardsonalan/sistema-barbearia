@@ -80,7 +80,6 @@ function verifyValueService(id: number) {
   <NavigationDrawerDashboard>
     <template #list-item>
       <v-list-item prepend-icon="mdi-view-dashboard-outline" title="Dashboard" value="dashboard" color="warning" to="/dashboard"/>
-      <v-list-item prepend-icon="mdi-account-box" title="Conta" value="conta" color="warning"/>
     </template>
     <template #main>
       <v-container>
