@@ -44,6 +44,8 @@ function registerClient () {
     hours.value = ''
     service.value = ''
     increment++
+  } else {
+    alert('Preencha os campos corretamente.')
   }
 }
 
